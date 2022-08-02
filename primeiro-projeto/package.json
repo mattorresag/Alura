@@ -1,0 +1,25 @@
+{
+  "name": "alura",
+  "version": "1.0.0",
+  "description": "Primeiro projeto com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattorresag/cypress-alura.git"
+  },
+  "keywords": [
+    "cypress-alura"
+  ],
+  "author": "mattorresag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattorresag/cypress-alura/issues"
+  },
+  "homepage": "https://github.com/mattorresag/cypress-alura#readme",
+  "devDependencies": {
+    "cypress": "^10.4.0"
+  }
+}

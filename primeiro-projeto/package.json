@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattorresag/cypress-alura.git"
+    "url": "https://github.com/mattorresag/Alura.git"
   },
   "keywords": [
     "cypress-alura"
@@ -16,9 +16,9 @@
   "author": "mattorresag",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mattorresag/cypress-alura/issues"
+    "url": "https://github.com/mattorresag/Alura/issues"
   },
-  "homepage": "https://github.com/mattorresag/cypress-alura#readme",
+  "homepage": "https://github.com/mattorresag/Alura#readme",
   "devDependencies": {
     "cypress": "^10.4.0"
   }

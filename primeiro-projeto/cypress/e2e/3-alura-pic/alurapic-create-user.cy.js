@@ -16,45 +16,31 @@ describe("AluraPic Criar Usuário", () => {
   });
 
   it("verifica mensagem de e-mail invalido", () => {
-    cy.contains("ap-vmessage", "User name is required!").should("be.visible");
-    cy.contains("ap-vmessage", "Password is required!").should("be.visible");
-    cy.contains("button", "login").should("be.disabled");
-    cy.contains("a", "Register now").click();
-    cy.contains("button", "Register").click();
-    cy.get("input[formcontrolname=email]").type("matheus");
-    cy.contains("ap-vmessage", "Invalid e-mail").should("be.visible");
+    cy.basic("email", "Invalid e-mail", "teste");
   });
 
   it("verifica mensagem de senha invalido", () => {
-    cy.contains("ap-vmessage", "User name is required!").should("be.visible");
-    cy.contains("ap-vmessage", "Password is required!").should("be.visible");
-    cy.contains("button", "login").should("be.disabled");
-    cy.contains("a", "Register now").click();
-    cy.contains("button", "Register").click();
-    cy.get("input[formcontrolname=password]").type("123");
-    cy.contains("button", "Register").click();
-    cy.contains("ap-vmessage", "Mininum length is 8").should("be.visible");
+    cy.basic("password", "Mininum length is 8", "matheus");
   });
 
   it("verifica se usuário já existe", () => {
-    cy.contains("ap-vmessage", "User name is required!").should("be.visible");
-    cy.contains("ap-vmessage", "Password is required!").should("be.visible");
-    cy.contains("button", "login").should("be.disabled");
-    cy.contains("a", "Register now").click();
-    cy.contains("button", "Register").click();
-    cy.get("input[formcontrolname=userName]").type("teste");
-    cy.contains("button", "Register").click();
-    cy.contains("ap-vmessage", "Username already taken").should("be.visible");
+    cy.basic("userName", "Username already taken", "teste");
   });
 
   it("verifica se começa com letra maíuscula", () => {
-    cy.contains("ap-vmessage", "User name is required!").should("be.visible");
-    cy.contains("ap-vmessage", "Password is required!").should("be.visible");
-    cy.contains("button", "login").should("be.disabled");
-    cy.contains("a", "Register now").click();
-    cy.contains("button", "Register").click();
-    cy.get("input[formcontrolname=userName]").type("Teste");
-    cy.contains("button", "Register").click();
-    cy.contains("ap-vmessage", "Must be lower case").should("be.visible");
+    cy.basic("userName", "Must be lower case", "Matheus");
+  });
+
+  const users = require("../../fixtures/usuarios.json");
+  users.forEach((user) => {
+    it.only(`criar usuário ${user.userName}`, () => {
+      cy.contains("a", "Register now").click();
+      cy.contains("button", "Register").click();
+      cy.get("input[formcontrolname='email']").type(user.email);
+      cy.get("input[formcontrolname='fullName']").type(user.fullName);
+      cy.get("input[formcontrolname='userName']").type(user.userName);
+      cy.get("input[formcontrolname='password']").type(user.password);
+      cy.contains("button", "Register").click();
+    });
   });
 });

@@ -1,0 +1,20 @@
+[
+  {
+    "email": "fiirenze@teste.com",
+    "password": "12345678",
+    "fullName": "Filipe Irenze",
+    "userName": "fiirenze"
+  },
+  {
+    "email": "firenze@teste.com",
+    "password": "12345678",
+    "fullName": "Filipe Irenz",
+    "userName": "fiirez"
+  },
+  {
+    "email": "teste@teste.com",
+    "password": "12345678",
+    "fullName": "Filipe Irene",
+    "userName": "fiiren"
+  }
+]

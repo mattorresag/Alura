@@ -1,6 +1,6 @@
 describe("AluraPic Criar Usuário", () => {
   beforeEach(() => {
-    cy.visit("https://alura-fotos.herokuapp.com/");
+    cy.visit("/");
   });
   it("verifica mensagens de visualização", () => {
     cy.contains("ap-vmessage", "Password is required!").should("be.visible");

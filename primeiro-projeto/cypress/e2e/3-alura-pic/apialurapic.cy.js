@@ -1,6 +1,6 @@
 describe("buscar fotos e dados", () => {
   beforeEach(() => {
-    cy.visit("https://alura-fotos.herokuapp.com/");
+    cy.visit("/");
   });
   // const users = require("../../fixtures/usuarios.json");
   it(`buscar fotos do flavio`, () => {
